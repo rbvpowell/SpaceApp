@@ -1,0 +1,17 @@
+{
+  "name": "nasaapodclient",
+  "version": "1.0.0",
+  "description": "A rest client for NASAs Astronomy Picture of the Day API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.11.2",
+    "dateformat": "^3.0.3",
+    "node": "^14.13.0",
+    "typed-rest-client": "^1.7.3"
+  }
+}

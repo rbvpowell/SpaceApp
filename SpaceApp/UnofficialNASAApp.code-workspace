@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"emeraldwalk.runonsave": {
+			"commands": [
+				{
+					"match": "\\.ts$",
+					"cmd": "echo 'I am ${env.USERNAME}: .ts file edited ${file}.'"
+				},
+				{
+					"match": "\\.ts$",
+					"cmd": "tsc --project ${workspaceFolder}\\Applications\\UnofficialNASAApp\\tsconfig.json"
+				},
+				{
+					"match": "\\.ts$",
+					"cmd": "browserify ${workspaceFolder}\\Applications\\UnofficialNASAApp\\Scripts\\NASAService.js -o ${workspaceFolder}\\Applications\\UnofficialNASAApp\\Scripts\\bundle.js"
+				}
+			]
+		}
+	}	
+}

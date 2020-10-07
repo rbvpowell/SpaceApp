@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Client</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="../Scripts/bundle.js"></script>
+    <link href="../Content/Site.css" rel="stylesheet">
+    <link href="../Content/tabulator.css" rel="stylesheet">
+</head>
+<body>
+    <video id="background" autoplay="autoplay" muted="muted" loop="loop" src="../Content/stars.mp4" class="layer fill" data-depth="0.4875" style="width: 100%; height: 100%; object-fit: cover; position: fixed; top: 0; left: 0;"></video>
+    <div id="particles-js" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute;"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        var partJson = {
+            "particles": {
+                "number": {
+                "value": 250
+                },
+                "color": {
+                "value": "#f9f3f4"
+                },
+                "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#ccc"
+                }
+                },
+                "opacity": {
+                "value": 1,
+                "random": true
+                },
+                "size": {
+                "value": 2
+                },
+                "line_linked": {
+                "enable": true,
+                "distance": 80,
+                "opacity": 0.3,
+                "width": 0
+                },
+                "move": {
+                "enable": true,
+                "speed": 0.4
+                }
+            }
+        };
+
+        var jsonUri = "data:text/plain;base64," + window.btoa(JSON.stringify(partJson));
+
+        particlesJS.load("particles-js", jsonUri, function () {
+            console.log("particles.json loaded...");
+        });
+    </script>
+    <div class="title">
+        <div class="text write" data-splitting="chars">UNOFFICIAL<br/>NASA<br/>CLIENT</div>
+        <div aria-hidden="true" class="text laser" data-splitting="chars">UNOFFICIAL<br/>NASA<br/>CLIENT</div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            Splitting();
+            setTimeout(() => {
+                $(".title").addClass("hidden");
+                setTimeout(() => {
+                    $(".uiButtonList").addClass("show");
+                }, 1000);
+            }, 7000);
+        });
+    </script>
+    <div class='uiButtonList'>
+        <div class="uiButtonWrapper" onclick="$('#apodModal').addClass('show'); $('.uiButtonList').addClass('invisible');">
+            <div class='uiButton'>Astronomical picture of the day</div>
+            <img src="/Content/APOD.jpg" class="uiButtonIcon" />
+        </div>
+        <div class="uiButtonWrapper" onclick="$('#apodsModal').addClass('show'); $('.uiButtonList').addClass('invisible');">
+            <div class='uiButton'>Previous astronomical pictures of the day</div>
+            <img src="/Content/APODs.jpg" class="uiButtonIcon" />
+        </div>
+        <div class="uiButtonWrapper" onclick="$('#neoModal').addClass('show'); $('.uiButtonList').addClass('invisible');">
+            <div class='uiButton'>Near earth objects</div>
+            <img src="/Content/NEO.jpeg" class="uiButtonIcon" />
+        </div>
+    </div>
+    <div class="targetArea"></div>
+</body>
+</html>

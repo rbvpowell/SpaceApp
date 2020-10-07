@@ -1,0 +1,17 @@
+{
+  "name": "unofficialnasaapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.5.1",
+    "jQuery": "^1.7.4",
+    "tabulator-tables": "^4.8.2",
+    "typed-rest-client": "^1.7.3"
+  }
+}
